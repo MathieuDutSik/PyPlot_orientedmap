@@ -3,9 +3,9 @@ requires = ["setuptools>=42"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "py_polyhedral"
+name = "PyPlot_orientedmap"
 version = "0.1.0"
-description = "An encapsulation of the polyhedral_common most useful functionalities"
+description = "An encapsulation of the PyPlot_orientedmap C++ code"
 authors = [
     { name = "Mathieu Dutour Sikiric", email = "mathieu.dutour@gmail.com" }
 ]

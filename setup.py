@@ -5,8 +5,8 @@ from setuptools.command.build_ext import build_ext
 
 class BuildCppWithCMake(build_ext):
     def run(self):
-        print("Starting of run command of py_polyhedral")
-        repo_url = "https://github.com/MathieuDutSik/polyhedral_common"
+        print("Starting of run command of PyPlot_orientedmap")
+        repo_url = "/Users/mathieu/GITall/GIT/Plot_orientedmap"
         clone_dir = "cpp_code_repo"
 
         if not os.path.exists(clone_dir):
@@ -33,7 +33,7 @@ class BuildCppWithCMake(build_ext):
             os.makedirs(target_bin_dir)
 
         # Step 3: Copy the generated binaries (artifacts) to the Python package directory
-        binaries = ["POLY_DirectSerialDualDesc", "CP_TestCopositivity", "CP_TestCompletePositivity", "LORENTZ_ReflectiveEdgewalk", "POLY_DirectFaceLattice", "INDEF_FORM_AutomorphismGroup", "INDEF_FORM_TestEquivalence", "INDEF_FORM_GetOrbitRepresentative", "INDEF_FORM_GetOrbit_IsotropicKplane", "LATT_canonicalize", "LATT_FindIsotropic", "LATT_SerialComputeDelaunay", "LATT_SerialLattice_IsoDelaunayDomain"]
+        binaries = ["CombPlaneToSVG"]
 
         print("Copying the binaries ...")
         for binary in binaries:
@@ -52,15 +52,15 @@ cpp_extension = Extension(
 )
 
 setup(
-    name='py_polyhedral',
+    name='PyPlot_orientedmap',
     version='0.1.0',
-    packages=['py_polyhedral'],
+    packages=['PyPlot_orientedmap'],
     ext_modules=[cpp_extension],
     cmdclass={
         'build_ext': BuildCppWithCMake,  # Use the custom command to build the C++ code
     },
     package_data={
-        'py_polyhedral': ['bin/*'],  # Ensure binaries are included in the package
+        'PyPlot_orientedmap': ['bin/*'],  # Ensure binaries are included in the package
     },
     # Add any Python dependencies here
     install_requires=[],
