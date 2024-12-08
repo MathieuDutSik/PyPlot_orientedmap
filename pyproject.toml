@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py_polyhedral"
+version = "0.1.0"
+description = "An encapsulation of the polyhedral_common most useful functionalities"
+authors = [
+    { name = "Mathieu Dutour Sikiric", email = "mathieu.dutour@gmail.com" }
+]
+dependencies = []
