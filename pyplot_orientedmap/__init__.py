@@ -1,1 +1,1 @@
-from .binaries import compute_isotropic_vector
+from .binaries import draw_svg_file
