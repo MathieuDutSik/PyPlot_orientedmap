@@ -26,7 +26,7 @@ class BuildCppWithCMake(build_ext):
         print("Building the C++ code...")
         subprocess.check_call(['cmake', '--build', '.'], cwd=build_dir)
 
-        target_bin_dir = os.path.join(self.build_lib, 'py_polyhedral', 'bin')
+        target_bin_dir = os.path.join(self.build_lib, 'pyplot_orientedmap', 'bin')
         print("target_bin_dir=", target_bin_dir)
         if not os.path.exists(target_bin_dir):
             print("Creating target_bin_dir=", target_bin_dir)
