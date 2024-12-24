@@ -14,6 +14,18 @@ def get_binary_path(the_bin):
         raise FileNotFoundError(f"Binary {binary_path} not found in {bin_dir}")
     return binary_path
 
+def write_matrix_file(file_name, M):
+    n_row = len(M)
+    n_col = len(M[0])
+    f = open(file_name, 'w')
+    f.write(str(n_row) + " " + str(n_col) + '\n')
+    for i_row in range(n_row):
+        for i_col in range(n_col):
+            f.write(" " + str(M[i_row][i_col]))
+        f.write("\n")
+    f.close()
+
+
 def write_namelist_file(input_file, plane_file, svg_file):
     f = open(input_file, 'w')
     f.write("&PLOT\n")
