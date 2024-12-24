@@ -39,7 +39,7 @@ def write_namelist_file(input_file, plane_file, svg_file):
     f.write(" width = 600\n")
     f.write(" height = 600\n")
     f.write(" MethodInsert = 2\n")
-    f.write(" ListExportFormat = \"eps\"\n")
+    f.write(" ListExportFormat = \"eps\", \"pdf\"\n")
     f.write("/\n")
     f.write("\n")
     f.write("&EDGE\n")
