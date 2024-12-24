@@ -20,8 +20,8 @@ The program is used in the following way for a toric graph:
 
 ```python
 import pyplot_orientedmap
-l_next = [3,6,9,0,8,11,1,10,4,2,7,5]
-l_invers = [1,2,0,4,5,3,7,8,6,10,11,9]
-svg_file = "map_3_12.svg"
+l_next  =[3,6,9,0,12,15,1,16,14,2,13,17,4,10,8,5,7,11]
+l_invers=[1,2,0,4,5,3,7,8,6,10,11,9,13,14,12,16,17,15]
+svg_file = "map_4_4_8.svg"
 pyplot_orientedmap.draw_svg_file(l_next, l_invers, svg_file)
 ```
