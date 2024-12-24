@@ -106,6 +106,6 @@ def draw_svg_file(l_next, l_invers, svg_file):
     plane_input = tempfile.NamedTemporaryFile()
     namelist_file = namelist_input.name
     plane_file = plane_input.name
-    write_invers_next_file(plane_file, l_next, l_invers):
-    write_namelist_file(input_file, plane_file, svg_file):
+    write_invers_next_file(plane_file, l_next, l_invers)
+    write_namelist_file(input_file, plane_file, svg_file)
     run_and_check([binary_path, input_file])
