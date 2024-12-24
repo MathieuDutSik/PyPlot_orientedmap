@@ -19,10 +19,10 @@ def write_invers_next_file(file_name, l_next, l_invers):
     f = open(file_name, 'w')
     f.write(str(n_de) + '\n')
     for i_de in range(n_de):
-        f.write(" " + str(l_invers[i_de]))
+        f.write(" " + str(l_next[i_de]))
     f.write("\n")
     for i_de in range(n_de):
-        f.write(" " + str(l_next[i_de]))
+        f.write(" " + str(l_invers[i_de]))
     f.write("\n")
     f.close()
 
@@ -39,7 +39,7 @@ def write_namelist_file(input_file, plane_file, svg_file):
     f.write(" width = 600\n")
     f.write(" height = 600\n")
     f.write(" MethodInsert = 2\n")
-    f.write(" ListExportFormat = \"eps\"")
+    f.write(" ListExportFormat = \"eps\"\n")
     f.write("/\n")
     f.write("\n")
     f.write("&EDGE\n")
@@ -58,6 +58,7 @@ def write_namelist_file(input_file, plane_file, svg_file):
     f.write(" SpecificRGB_G = \n")
     f.write(" SpecificRGB_B = \n")
     f.write("/\n")
+    f.write("\n")
     f.write("&VERT\n")
     f.write(" ListRadiusIDE = \n")
     f.write(" ListRadiusGroup = \n")
