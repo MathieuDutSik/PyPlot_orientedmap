@@ -5,7 +5,7 @@ from setuptools.command.build_ext import build_ext
 
 class BuildCppWithCMake(build_ext):
     def run(self):
-        print("Starting of run command of PyPlot_orientedmap")
+        print("Starting of run command of pyplot_orientedmap")
         repo_url = "/Users/mathieu/GITall/GIT/Plot_orientedmap"
         clone_dir = "cpp_code_repo"
 
@@ -52,15 +52,15 @@ cpp_extension = Extension(
 )
 
 setup(
-    name='PyPlot_orientedmap',
+    name='pyplot_orientedmap',
     version='0.1.0',
-    packages=['PyPlot_orientedmap'],
+    packages=['pyplot_orientedmap'],
     ext_modules=[cpp_extension],
     cmdclass={
         'build_ext': BuildCppWithCMake,  # Use the custom command to build the C++ code
     },
     package_data={
-        'PyPlot_orientedmap': ['bin/*'],  # Ensure binaries are included in the package
+        'pyplot_orientedmap': ['bin/*'],  # Ensure binaries are included in the package
     },
     # Add any Python dependencies here
     install_requires=[],

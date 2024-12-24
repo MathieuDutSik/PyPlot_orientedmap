@@ -3,9 +3,9 @@ requires = ["setuptools>=42"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "PyPlot_orientedmap"
+name = "pyplot_orientedmap"
 version = "0.1.0"
-description = "An encapsulation of the PyPlot_orientedmap C++ code"
+description = "An encapsulation of the Plot_orientedmap C++ code"
 authors = [
     { name = "Mathieu Dutour Sikiric", email = "mathieu.dutour@gmail.com" }
 ]

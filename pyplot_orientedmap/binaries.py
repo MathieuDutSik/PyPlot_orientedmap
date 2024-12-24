@@ -14,15 +14,16 @@ def get_binary_path(the_bin):
         raise FileNotFoundError(f"Binary {binary_path} not found in {bin_dir}")
     return binary_path
 
-def write_matrix_file(file_name, M):
-    n_row = len(M)
-    n_col = len(M[0])
+def write_invers_next_file(file_name, l_next, l_invers):
+    n_de = len(l_next)
     f = open(file_name, 'w')
-    f.write(str(n_row) + " " + str(n_col) + '\n')
-    for i_row in range(n_row):
-        for i_col in range(n_col):
-            f.write(" " + str(M[i_row][i_col]))
-        f.write("\n")
+    f.write(str(n_de) + '\n')
+    for i_de in range(n_de):
+        f.write(" " + str(l_invers[i_de]))
+    f.write("\n")
+    for i_de in range(n_de):
+        f.write(" " + str(l_next[i_de]))
+    f.write("\n")
     f.close()
 
 
@@ -93,18 +94,18 @@ def run_and_check(list_comm):
         print("list_comm=", list_comm)
         raise RuntimeError("The running of the program went wrongly")
 
-def draw_svg_file(M, svg_file):
+def draw_svg_file(l_next, l_invers, svg_file):
     """
-    Computes the isotropic vector of a matrix
-    :param M the matrix as input
-    :return: The isotropic vector or None is none exists
+    Draws the coordinate from the invers/next operations.
+    :param l_invers, the permutation of the directed edges from the invers operator
+    :param l_next, the permutation of the directed edges from the next operator
+    :return: The output as a file.
     """
     binary_path = get_binary_path("CombPlaneToSVG")
     namelist_input = tempfile.NamedTemporaryFile()
     plane_input = tempfile.NamedTemporaryFile()
     namelist_file = namelist_input.name
     plane_file = plane_input.name
-    write_matrix_file(plane_file, M)
+    write_invers_next_file(plane_file, l_next, l_invers):
     write_namelist_file(input_file, plane_file, svg_file):
     run_and_check([binary_path, input_file])
-
